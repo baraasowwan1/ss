@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Layers, Shield, Sparkles, ChevronDown, Monitor } from 'lucide-react';
+import { Layers, Sparkles, ChevronDown, Monitor } from 'lucide-react';
 import { getStores } from '../utils/database';
 
 export default function Navbar({ currentView, setView, onSelectStore }) {
@@ -146,7 +146,7 @@ export default function Navbar({ currentView, setView, onSelectStore }) {
                     onMouseEnter={e => e.currentTarget.style.background = 'hsla(var(--text-primary) / 0.05)'}
                     onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifycontent: 'space-between' }}>
                       <span style={{ fontWeight: 600, fontSize: '0.85rem', color: '#fff' }}>{store.name}</span>
                       <span className={`badge ${store.status === 'active' ? 'badge-active' : 'badge-suspended'}`} style={{ fontSize: '0.6rem', padding: '2px 6px' }}>
                         {store.status}
@@ -158,25 +158,6 @@ export default function Navbar({ currentView, setView, onSelectStore }) {
               </div>
             )}
           </div>
-
-          {/* Admin Control Dashboard */}
-          <button 
-            onClick={() => setView('admin')} 
-            className="btn"
-            style={{ 
-              background: currentView === 'admin' ? 'hsla(var(--secondary-hsl) / 0.15)' : 'transparent', 
-              color: currentView === 'admin' ? 'var(--secondary)' : 'hsl(var(--text-secondary))',
-              border: currentView === 'admin' ? '1px solid var(--secondary)' : '1px solid transparent',
-              padding: '8px 16px',
-              fontSize: '0.85rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px'
-            }}
-          >
-            <Shield size={14} />
-            Admin Dashboard
-          </button>
         </div>
       </div>
     </nav>
