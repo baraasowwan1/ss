@@ -4,12 +4,11 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Landing from './views/Landing';
 import Creator from './components/Creator';
-import Admin from './views/Admin';
 import ClientHome from './views/ClientHome';
 import Simulator from './components/Simulator';
 
 export default function App() {
-  const [view, setView] = useState('landing'); // landing, creator, admin, client-portal, store-preview
+  const [view, setView] = useState('landing'); // landing, creator, client-portal, store-preview
   const [selectedPlan, setSelectedPlan] = useState('professional');
   const [activeStoreSubdomain, setActiveStoreSubdomain] = useState('');
 
@@ -47,8 +46,6 @@ export default function App() {
             onSelectStore={handleSelectStorePreview} 
           />
         );
-      case 'admin':
-        return <Admin setView={setView} onSelectStore={handleSelectStorePreview} />;
       case 'client-portal':
         return (
           <ClientHome 
